@@ -1,0 +1,13 @@
+name: My First Workflow
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - name: print message
+          run: gitecho "hello"
+
+       
