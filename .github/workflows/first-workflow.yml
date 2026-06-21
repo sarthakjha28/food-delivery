@@ -10,10 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Install packages from package.json
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
       - name: Install Dependencies
         run: npm install
 
-      # Verify React project builds successfully
       - name: Build React App
         run: npm run build
