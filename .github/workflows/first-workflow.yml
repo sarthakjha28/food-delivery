@@ -1,13 +1,19 @@
 name: My First Workflow
 
+# Run workflow whenever code is pushed
 on:
   push:
 
 jobs:
   build:
+    # Create temporary Ubuntu machine
     runs-on: ubuntu-latest
-    steps:
-        - name: print message
-          run: echo "hello"
 
-       
+    steps:
+      # Install packages from package.json
+      - name: Install Dependencies
+        run: npm install
+
+      # Verify React project builds successfully
+      - name: Build React App
+        run: npm run build
